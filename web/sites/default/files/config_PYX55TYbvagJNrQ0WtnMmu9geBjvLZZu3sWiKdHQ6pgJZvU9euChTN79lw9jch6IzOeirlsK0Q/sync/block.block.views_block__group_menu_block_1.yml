@@ -1,0 +1,33 @@
+uuid: 87fab8e7-e4b4-4a05-a210-03895739046b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_menu
+  module:
+    - node
+    - views
+  theme:
+    - bootstrap_for_drupal_subtheme
+id: views_block__group_menu_block_1
+theme: bootstrap_for_drupal_subtheme
+region: sidebar_left
+weight: 0
+provider: null
+plugin: 'views_block:group_menu-block_1'
+settings:
+  id: 'views_block:group_menu-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      group: group
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

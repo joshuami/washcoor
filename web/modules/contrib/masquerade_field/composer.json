@@ -1,0 +1,22 @@
+{
+  "name": "drupal/masquerade_field",
+  "description": "Allows a user to masquerade as other users, using a user account field.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/masquerade_field",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/masquerade_field",
+    "source": "https://git.drupalcode.org/project/masquerade_field"
+  },
+  "authors": [
+    {
+      "name": "Claudiu Cristea",
+      "email": "clau.cristea@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/masquerade": "^2.0"
+  }
+}

@@ -1,0 +1,22 @@
+uuid: 6427f433-eb00-4b1b-8d35-38d557f9d99c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bootstrap_for_drupal_subtheme
+_core:
+  default_config_hash: DstDufmVA-zFZOB8sI37I15Zl2rtrhEEVxn3JapwA00
+id: bootstrap_for_drupal_subtheme_local_tasks
+theme: bootstrap_for_drupal_subtheme
+region: content_before
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

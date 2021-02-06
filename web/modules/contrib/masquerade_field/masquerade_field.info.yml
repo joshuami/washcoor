@@ -1,0 +1,14 @@
+type: module
+name: 'Masquerade Field'
+descriptin: 'Allows a user to masquerade as other users, using a user account field.'
+
+core_version_requirement: ^8 || ^9
+php: 7.1
+
+dependencies:
+  - masquerade:masquerade
+
+# Information added by Drupal.org packaging script on 2020-02-05
+version: '8.x-1.0-alpha1'
+project: 'masquerade_field'
+datestamp: 1580921870

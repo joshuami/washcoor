@@ -1,0 +1,7 @@
+field.formatter.settings.masquerade_field_default:
+  type: field.formatter.settings.entity_reference_label
+  label: 'Masquerade field formatter settings'
+
+views.field.masquerade_link:
+  type: views.field.entity_link
+  label: 'Masquerade link'

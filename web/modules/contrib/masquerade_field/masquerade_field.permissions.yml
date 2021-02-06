@@ -1,0 +1,12 @@
+edit masquerade field:
+  title: "Edit the masquerade field"
+  description: 'Users granted with this permission are able select one or multiple users that a given account can masquerade as.'
+  restrict access: true
+
+view own masquerade field:
+  title: "View own masquerade field"
+  description: 'Users granted with this permission are able see the list of users they can masquerade as.'
+
+view any masquerade field:
+  title: "View any masquerade field"
+  description: 'Users granted with this permission are able see the list of account a user can masquerade as.'

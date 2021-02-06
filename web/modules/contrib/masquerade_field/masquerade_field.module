@@ -1,0 +1,95 @@
+<?php
+
+/**
+ * @file
+ * Contains Masquerade Field module main functionality.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function masquerade_field_entity_base_field_info(EntityTypeInterface $entity_type): array {
+  $fields = [];
+  if ($entity_type->id() === 'user') {
+    $fields['masquerade_as'] = BaseFieldDefinition::create('masquerade_field')
+      ->setLabel(t('Masquerade as'))
+      ->setDescription(t('Select the accounts this user can masquerade as.'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'type' => 'masquerade_field_default',
+      ])
+      ->setConstraints(['ExcludeOriginUser' => []])
+      ->setTranslatable(FALSE);
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function masquerade_field_field_widget_info_alter(array &$info): void {
+  $info['entity_reference_autocomplete']['field_types'][] = 'masquerade_field';
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function masquerade_field_entity_field_access(string $operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL): AccessResultInterface {
+  if ($field_definition->getTargetEntityTypeId() !== 'user' || $field_definition->getName() !== 'masquerade_as') {
+    // Let other modules decide.
+    return AccessResult::neutral();
+  }
+
+  if ($operation === 'view') {
+    $permitted = $account->hasPermission('view any masquerade field') || ($account->id() === $items->getEntity()->id() && $account->hasPermission('view own masquerade field'));
+    $access_result = AccessResult::allowedIf($permitted)->addCacheContexts(['user.permissions']);
+  }
+  elseif ($operation === 'edit') {
+    $access_result = AccessResult::allowedIfHasPermission($account, 'edit masquerade field');
+  }
+  else {
+    throw new \InvalidArgumentException("Wrong operation '$operation'.");
+  }
+
+  // By default, this field cannot be accessed.
+  return $access_result->isAllowed() ? $access_result : AccessResult::forbidden()->addCacheContexts(['user.permissions']);
+}
+
+/**
+ * Implements hook_masquerade_access().
+ */
+function masquerade_field_masquerade_access(AccountProxyInterface $user, UserInterface $target_account): ?bool {
+  // Load the user account entity.
+  $account = \Drupal::entityTypeManager()->getStorage('user')->load($user->id());
+  $uids = [];
+  foreach ($account->get('masquerade_as') as $field_item) {
+    $uids[$field_item->target_id] = TRUE;
+  }
+
+  // The current user is explicitly configured to masquerade as target account.
+  if (isset($uids[$target_account->id()])) {
+    return TRUE;
+  }
+
+  // Let the other modules decide.
+  return NULL;
+}
