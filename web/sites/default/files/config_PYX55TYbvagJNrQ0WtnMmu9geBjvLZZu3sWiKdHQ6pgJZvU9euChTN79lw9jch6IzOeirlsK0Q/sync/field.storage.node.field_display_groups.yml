@@ -1,0 +1,19 @@
+uuid: 01f2c92d-1398-4a34-a55b-8b6285e59265
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_display_groups
+field_name: field_display_groups
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: de2d9af4-794d-44b8-91dd-33877a4cbb78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_groups
+    - node.type.page
+id: node.page.field_display_groups
+field_name: field_display_groups
+entity_type: node
+bundle: page
+label: 'Displayed in'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: groups_for_user
+      display_name: ref_groups_for_user
+      arguments: {  }
+field_type: entity_reference

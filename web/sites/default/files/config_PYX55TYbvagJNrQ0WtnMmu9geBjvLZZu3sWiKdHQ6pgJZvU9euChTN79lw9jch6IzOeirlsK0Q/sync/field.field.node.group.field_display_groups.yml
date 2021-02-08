@@ -1,0 +1,28 @@
+uuid: 7a2bc6e9-f656-4491-af55-470eb2a8cb98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_groups
+    - node.type.group
+id: node.group.field_display_groups
+field_name: field_display_groups
+entity_type: node
+bundle: group
+label: 'Part of'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      group: group
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
