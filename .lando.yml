@@ -1,0 +1,28 @@
+name: washcotest
+recipe: drupal9
+config:
+  webroot: web
+tooling:
+  drush:
+    description: Run drush commands
+    service: appserver
+    cmd: drush --root=/app/web
+  refresh:
+    description: Refresh branch by installing Composer dependencies and importing Drupal config, etc. Run after every merge from master.
+    cmd:
+      - appserver: /bin/bash -c "if [[ \$(composer install --dry-run -d /app 2>&1 | grep -oPc 'Uninstalling drupal/\w+') -gt 0 ]]; then { echo Composer is about to remove one or more modules... Let\'s disable them in Drupal first.; for module in \$(composer install --dry-run -d /app 2>&1 | grep -oP 'Uninstalling drupal/\K\w+'); do { echo Disabling \$module...; drush pmu \$module -y;} done } fi"
+      - appserver: echo "Installing Composer dependencies..."
+      - appserver: composer install -d /app
+      - appserver: echo "Rebuilding cache..."
+      - appserver: drush cr
+      - appserver: echo "Run drush deploy"
+      - appserver: drush deploy -v -y
+  cupex:
+    description: Composer update, database update, and config export to get a clean module or theme update
+    cmd:
+      - appserver: echo "Updating Composer dependencies..."
+      - appserver: composer update
+      - appserver: echo "Run database updates..."
+      - appserver: drush updb -y
+      - appserver: echo "Exporting Drupal config..."
+      - appserver: drush cex -y
