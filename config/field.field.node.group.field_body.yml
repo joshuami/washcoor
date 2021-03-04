@@ -1,14 +1,14 @@
-uuid: c134984b-d170-4bba-b45d-0303512c5998
+uuid: 6519cc86-dc78-4bbb-92a9-503da7b6f8fc
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_body
     - node.type.group
   module:
     - text
-id: node.group.body
-field_name: body
+id: node.group.field_body
+field_name: field_body
 entity_type: node
 bundle: group
 label: Body
@@ -17,7 +17,5 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings:
-  display_summary: true
-  required_summary: false
-field_type: text_with_summary
+settings: {  }
+field_type: text_long

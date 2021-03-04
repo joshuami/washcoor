@@ -2,6 +2,10 @@ uuid: 62f1bec6-058a-439a-b8a8-500bef4e60a5
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.group
+    - node.type.news
+    - node.type.page
   module:
     - content_moderation
 _core:
@@ -59,5 +63,9 @@ type_settings:
       from:
         - draft
         - published
-  entity_types: {  }
+  entity_types:
+    node:
+      - group
+      - news
+      - page
   default_moderation_state: draft

@@ -1,18 +1,18 @@
-uuid: 3267818e-128a-46e0-9651-d16b1c23c0d9
+uuid: 51b68cdd-ff25-46db-8258-eee7f8a694fa
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_display_groups
-    - node.type.article
     - node.type.group
-id: node.article.field_display_groups
+    - node.type.news
+id: node.news.field_display_groups
 field_name: field_display_groups
 entity_type: node
-bundle: article
-label: 'Displayed in'
+bundle: news
+label: 'Part of'
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

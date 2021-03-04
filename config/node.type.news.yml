@@ -1,0 +1,17 @@
+uuid: 1ab998d8-9a70-48af-82cc-62146cf87ebc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: News
+type: news
+description: 'Use <em>news</em> to create content based on a posted or updated date, such as news, press releases, blogs.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

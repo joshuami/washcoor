@@ -1,0 +1,19 @@
+uuid: 1a0f37e7-2fd2-4d14-91ad-b5b02b4d36f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.page
+id: node.page.field_summary
+field_name: field_summary
+entity_type: node
+bundle: page
+label: Summary
+description: 'Provide a <em>summary</em> that will be used in list views and search results to give more context to why someone will read your content that is more descriptive than the title.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
