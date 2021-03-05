@@ -8,12 +8,16 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
-    ],
+    },
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
@@ -24,6 +28,7 @@
         "drupal/masquerade": "^2.0@beta",
         "drupal/masquerade_field": "^1.0@alpha",
         "drupal/pathauto": "^1.8",
+        "drupal/select2": "^1.13",
         "drupal/subpathauto": "^1.1",
         "drush/drush": "^10.3"
     },
@@ -41,6 +46,10 @@
                 "web-root": "web/"
             }
         },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"

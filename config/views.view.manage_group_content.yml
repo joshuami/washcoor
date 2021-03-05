@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - node.type.group
+    - node.type.news
+    - node.type.page
     - user.role.administrator
-    - user.role.editor
+    - user.role.author
+    - user.role.lead
+    - user.role.publisher
   module:
     - node
     - user
@@ -27,7 +31,9 @@ display:
         type: role
         options:
           role:
-            editor: editor
+            author: author
+            publisher: publisher
+            lead: lead
             administrator: administrator
       cache:
         type: tag
@@ -780,12 +786,14 @@ display:
           id: type_1
           table: node_field_data
           field: type
-          relationship: none
+          relationship: reverse__node__field_display_groups
           group_type: group
           admin_label: ''
           operator: in
           value:
             group: group
+            news: news
+            page: page
           group: 1
           exposed: false
           expose:
@@ -878,9 +886,9 @@ display:
           validate_options:
             bundles:
               group: group
-            access: true
             operation: update
             multiple: 0
+            access: false
           break_phrase: false
           not: false
           entity_type: node

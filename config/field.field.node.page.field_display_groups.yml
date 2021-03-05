@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_display_groups
+    - node.type.group
     - node.type.page
 id: node.page.field_display_groups
 field_name: field_display_groups
@@ -16,10 +17,13 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: 'default:node'
   handler_settings:
-    view:
-      view_name: groups_for_user
-      display_name: ref_groups_for_user
-      arguments: {  }
+    target_bundles:
+      group: group
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

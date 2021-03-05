@@ -5,7 +5,9 @@ dependencies:
   config:
     - node.type.group
     - user.role.administrator
-    - user.role.editor
+    - user.role.author
+    - user.role.lead
+    - user.role.publisher
   module:
     - contact
     - node
@@ -28,7 +30,9 @@ display:
         type: role
         options:
           role:
-            editor: editor
+            author: author
+            publisher: publisher
+            lead: lead
             administrator: administrator
       cache:
         type: tag
@@ -536,9 +540,9 @@ display:
           validate_options:
             bundles:
               group: group
-            access: true
             operation: update
             multiple: 0
+            access: false
           break_phrase: false
           not: false
           entity_type: node

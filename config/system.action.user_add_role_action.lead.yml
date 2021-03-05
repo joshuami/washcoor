@@ -1,0 +1,14 @@
+uuid: 41d95a81-29ef-4622-b263-b537eed7f2a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.lead
+  module:
+    - user
+id: user_add_role_action.lead
+label: 'Add the Lead role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: lead

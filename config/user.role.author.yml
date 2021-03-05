@@ -1,0 +1,31 @@
+uuid: 3ab89704-0baa-4d83-ada6-aee1b4f8d153
+langcode: en
+status: true
+dependencies: {  }
+id: author
+label: Author
+weight: -8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create news content'
+  - 'create page content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit own group content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'use admin toolbar search'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition mark_for_review'
+  - 'view all revisions'
+  - 'view group revisions'
+  - 'view latest version'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view the administration theme'

@@ -1,4 +1,4 @@
-uuid: 23965034-fc92-4a08-bb12-7183462607d3
+uuid: 2dc0ccfe-87a4-4580-bb1f-f85b42b23152
 langcode: en
 status: true
 dependencies:
@@ -50,12 +50,21 @@ display:
       pager:
         type: none
         options:
-          items_per_page: null
           offset: 0
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
       fields:
         title:
           id: title
@@ -84,8 +93,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -119,6 +128,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: title
           plugin_id: field
       filters:
         status:
@@ -170,8 +181,8 @@ display:
           admin_label: ''
           operator: in
           value:
-            page: page
             group: group
+            page: page
           group: 1
           exposed: false
           expose:
@@ -219,7 +230,6 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: standard
-      title: Menu
       header: {  }
       footer: {  }
       empty: {  }
@@ -272,6 +282,7 @@ display:
           entity_field: nid
           plugin_id: node_nid
       display_extenders: {  }
+      title: Menu
     cache_metadata:
       max-age: -1
       contexts:
@@ -288,6 +299,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:

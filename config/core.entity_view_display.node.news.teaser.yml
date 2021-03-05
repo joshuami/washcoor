@@ -15,6 +15,11 @@ targetEntityType: node
 bundle: news
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_summary:
     type: basic_string
     weight: 0

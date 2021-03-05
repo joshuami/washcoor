@@ -1,0 +1,44 @@
+uuid: 446037df-4728-4ebf-9705-710c1789fcce
+langcode: en
+status: true
+dependencies: {  }
+id: lead
+label: Lead
+weight: -6
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create group content'
+  - 'create news content'
+  - 'create page content'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete own group content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'edit any group content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit own group content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'revert all revisions'
+  - 'revert group revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'use admin toolbar search'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition mark_for_review'
+  - 'use editorial transition publish'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view group revisions'
+  - 'view latest version'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view the administration theme'

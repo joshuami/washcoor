@@ -1,0 +1,40 @@
+uuid: c44d1b79-6fd3-466e-8c21-3830940f6ddb
+langcode: en
+status: true
+dependencies: {  }
+id: publisher
+label: Publisher
+weight: -7
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'create news content'
+  - 'create page content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'edit any group content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit own group content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'revert all revisions'
+  - 'revert group revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'use admin toolbar search'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition mark_for_review'
+  - 'use editorial transition publish'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view group revisions'
+  - 'view latest version'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view the administration theme'

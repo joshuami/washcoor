@@ -1,0 +1,29 @@
+uuid: 16064d86-f271-458b-b1b4-1116a5827289
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewers
+    - node.type.page
+id: node.page.field_reviewers
+field_name: field_reviewers
+entity_type: node
+bundle: page
+label: Reviewers
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference
