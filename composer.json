@@ -76,7 +76,8 @@
         },
         "patches": {
             "drupal/core": {
-                "2958588 - Off-canvas style resets are overriding styles (especially SVGs) resulting in display issues": "https://www.drupal.org/files/issues/2021-02-02/2958588-54.patch"
+                "2958588 - Off-canvas style resets are overriding styles (especially SVGs) resulting in display issues": "https://www.drupal.org/files/issues/2021-02-02/2958588-54.patch",
+                "3047392 - 'Site UUID in source storage does not match the target storage.' when importing a config with empty system.site UUID": "https://www.drupal.org/files/issues/2020-03-28/3047392-17_0.patch"
             }
         }
     }
